@@ -20,7 +20,7 @@ export default function Accordion() {
         if (findIndexOfCurrentId === -1) {
             cpyMultiple.push(getCurrentId)
         } else {
-            cpyMultiple.splice(getCurrentId, 1)
+            cpyMultiple.splice(findIndexOfCurrentId, 1)
         }
         setMultiple(cpyMultiple)
         console.log("final state - " + multiple)
@@ -33,7 +33,7 @@ export default function Accordion() {
                 <div className="accordion">
                     {
                         data && data.length > 0 ?
-                            data.map(dataItem => <div className="item">
+                            data.map(dataItem => <div className="item" key={dataItem.id}>
                                 <div
                                     onClick={
                                         enableMultiSelect
