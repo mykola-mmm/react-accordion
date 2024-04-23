@@ -79,6 +79,5 @@ export default function RandomColor() {
                 </div>
             </div>
         </>
-
     )
 }
