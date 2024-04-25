@@ -6,7 +6,7 @@ export default function LoadMoreData({ itemsPerLoad = 20 }) {
     const [loading, setLoading] = useState(false)
     const [products, setProducts] = useState([])
     const [count, setCount] = useState(0)
-
+    const [disableButton, setDisableButton] = useState(false)
 
     async function fetchProducts() {
         try {
@@ -14,13 +14,12 @@ export default function LoadMoreData({ itemsPerLoad = 20 }) {
             const response = await fetch(`https://dummyjson.com/products?limit=${itemsPerLoad}&skip=${count === 0 ? 0 : count * itemsPerLoad}`)
             const result = await response.json()
             console.log(result)
-
             if (result && result.products && result.products.length) {
                 setLoading(false)
-                setProducts((prevData) => [...prevData, ...result.products])
+                setProducts(() => [...products, ...result.products])
             }
-
-        } catch (error) {
+        }
+        catch (error) {
             console.log(error)
             setLoading(false)
         }
@@ -32,14 +31,18 @@ export default function LoadMoreData({ itemsPerLoad = 20 }) {
         fetchProducts();
     }, [count])
 
-    if (loading) return (
-        <>
-            <div className="container">
-                <div>Loading data...</div>
-                <div>Please wait...</div>
-            </div>
-        </>
-    )
+    useEffect(() => {
+        if (products && products.length >= 100) setDisableButton(true)
+    }, [products])
+
+    // if (loading) return (
+    //     <>
+    //         <div className="container">
+    //             <div>Loading data...</div>
+    //             <div>Please wait...</div>
+    //         </div>
+    //     </>
+    // )
 
     return (
         <>
@@ -58,8 +61,13 @@ export default function LoadMoreData({ itemsPerLoad = 20 }) {
                     }
                 </div>
                 <div className="button-container">
-                    <button onClick={() => setCount(count+1)}>Load More Products</button>
+                    <button disabled={disableButton} onClick={() => setCount(count+1)}>Load More Products</button>
                 </div>
+                {
+                    disableButton
+                    ? <p className="message">No more products to load</p>
+                    : null
+                }
             </div>
         </>
     )
