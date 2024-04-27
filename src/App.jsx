@@ -8,12 +8,14 @@ import TreeView from './components/tree-view'
 import { menus } from './components/tree-view/data'
 import QrCodeGenerator from './components/qr-code-generator'
 import SwitchTheme from './components/switch-theme'
+import ScrollIndicator from './components/scroll-indicator'
 
 function App() {
 
   return (
     <>
-      <SwitchTheme />
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+      {/* <SwitchTheme /> */}
       {/* <QrCodeGenerator /> */}
       {/* <TreeView menus={menus}/> */}
       {/* <LoadMoreData itemsPerLoad={50} /> */}
