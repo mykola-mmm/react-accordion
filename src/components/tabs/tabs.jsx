@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Tabs({ tabsContent, onChange }) {
-  const [currentTabIndex, setCurrentTabIndex] = useState(0);
+  const [currentTabIndex, setCurrentTabIndex] = useState(null);
 
   function handleOnClick(getCurrentIndex) {
     setCurrentTabIndex(getCurrentIndex);
