@@ -1,4 +1,5 @@
 import Tabs from "./tabs"
+import "./styles.css"
 
 function RandomComponent() {
     return <div>Some random text</div>
