@@ -12,6 +12,8 @@ import ScrollIndicator from './components/scroll-indicator'
 import Tabs from './components/tabs'
 import TabsParent from './components/tabs'
 import ModalTest from './components/custom-modal-popup/modal-test'
+import GithubProfileFinder from './components/gitprofilefinder'
+
 function App() {
 
   const modalList = [
@@ -21,9 +23,11 @@ function App() {
     { name: 'Modal 4', content: 'Content for Modal 4' },
     { name: 'Modal 5', content: 'Content for Modal 5' }
   ];
+
   return (
     <>
-      <ModalTest modalList={modalList}/>
+    <GithubProfileFinder></GithubProfileFinder>
+      {/* <ModalTest modalList={modalList}/> */}
       {/* <TabsParent /> */}
       {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
       {/* <SwitchTheme /> */}

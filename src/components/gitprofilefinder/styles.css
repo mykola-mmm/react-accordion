@@ -1,0 +1,53 @@
+.github-profile-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    .input-wrapper{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 30px;
+    }
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding-right: 50px;
+
+    .user{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: inherit;
+        .avatar-wrapper{
+            padding: inherit;
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+        }
+        .personal-info{
+            display: flex;
+            flex-direction: column;
+    
+        }
+    }
+
+    .github-info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: inherit;
+        padding-top: 30px;
+        gap: 20px;
+    }
+
+}
