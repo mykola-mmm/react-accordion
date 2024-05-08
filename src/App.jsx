@@ -14,9 +14,16 @@ import TabsParent from './components/tabs'
 import ModalTest from './components/custom-modal-popup/modal-test'
 function App() {
 
+  const modalList = [
+    { name: 'Modal 1', content: 'Content for Modal 1' },
+    { name: 'Modal 2', content: 'Content for Modal 2' },
+    { name: 'Modal 3', content: 'Content for Modal 3' },
+    { name: 'Modal 4', content: 'Content for Modal 4' },
+    { name: 'Modal 5', content: 'Content for Modal 5' }
+  ];
   return (
     <>
-      <ModalTest />
+      <ModalTest modalList={modalList}/>
       {/* <TabsParent /> */}
       {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
       {/* <SwitchTheme /> */}

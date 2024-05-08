@@ -1,9 +1,10 @@
 import React from "react";
 
 export default function Modal({ id, header, body, footer, closeFunction }) {
+    
   return (
     <div className="modal" id={id || "Modal"}>
-      <div className="modal-background"></div>
+      <div className="modal-background" onClick={closeFunction}></div>
       <div className="modal-content">
         <div className="header">
           <span className="close-modal-icon" onClick={closeFunction}>X</span>
