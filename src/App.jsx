@@ -11,11 +11,13 @@ import SwitchTheme from './components/switch-theme'
 import ScrollIndicator from './components/scroll-indicator'
 import Tabs from './components/tabs'
 import TabsParent from './components/tabs'
+import ModalTest from './components/custom-modal-popup/modal-test'
 function App() {
 
   return (
     <>
-      <TabsParent />
+      <ModalTest />
+      {/* <TabsParent /> */}
       {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
       {/* <SwitchTheme /> */}
       {/* <QrCodeGenerator /> */}
